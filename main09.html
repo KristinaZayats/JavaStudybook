@@ -1,0 +1,49 @@
+<html>
+<body>
+<h2><center>Наследование</center></h2>
+<font size="4">Одним из ключевых аспектов объектно-ориентированного программирования является наследование. С помощью наследования можно расширить функционал уже имеющихся классов за счет добавления нового функционала или изменения старого. Например, имеется следующий класс Person, описывающий отдельного человека:<br></font>
+<div style="overflow: auto; width:60%; height:30%;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">&nbsp;1&nbsp;</span><span style="color:green">|</span> class Person {</li>
+<li><span style="color:#949494">&nbsp;2&nbsp;</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">&nbsp;3&nbsp;</span><span style="color:green">|</span> &emsp;String name;</li>
+<li><span style="color:#949494">&nbsp;4&nbsp;</span><span style="color:green">|</span> &emsp;public String getName(){ return name; }</li>
+<li><span style="color:#949494">&nbsp;5&nbsp;</span><span style="color:green">|</span> &emsp;public Person(String name){</li>
+<li><span style="color:#949494">&nbsp;6&nbsp;</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">&nbsp;7&nbsp;</span><span style="color:green">|</span> &emsp;&emsp;this.name=name;</li>
+<li><span style="color:#949494">&nbsp;8&nbsp;</span><span style="color:green">|</span> &emsp;}</li>
+<li><span style="color:#949494">&nbsp;9&nbsp;</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">10</span><span style="color:green">|</span> &emsp;public void display(){</li>
+<li><span style="color:#949494">11</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">12</span><span style="color:green">|</span> &emsp;&emsp;System.out.println("Name: " + name);</li>
+<li><span style="color:#949494">13</span><span style="color:green">|</span> &emsp;}</li>
+<li><span style="color:#949494">14</span><span style="color:green">|</span> }</li>
+</ul>
+</div><br>
+<font size="4">И, возможно, впоследствии необходимо будет добавить еще один класс, который описывает сотрудника предприятия - класс Employee. Так как этот класс реализует тот же функционал, что и класс Person, поскольку сотрудник - это также и человек, то было бы рационально сделать класс Employee производным (наследником, подклассом) от класса Person, который, в свою очередь, называется базовым классом, родителем или суперклассом:<br></font>
+<div style="overflow: auto; width:60%; height:auto;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">1</span><span style="color:green">|</span> class Employee extends Person{</li>
+<li><span style="color:#949494">2</span><span style="color:green">|</span> &emsp;public Employee(String name){</li>
+<li><span style="color:#949494">3</span><span style="color:green">|</span> &emsp;&emsp;super(name);    // если базовый класс определяет конструктор</li>
+<li><span style="color:#949494">4</span><span style="color:green">|</span> &emsp;&emsp;&emsp;//  то производный класс должен его вызвать</li>
+<li><span style="color:#949494">5</span><span style="color:green">|</span> &emsp;}</li>
+<li><span style="color:#949494">6</span><span style="color:green">|</span> }</li>
+</ul>
+</div>
+<font size="4">Чтобы объявить один класс наследником от другого, необходимо использовать после имени класса-наследника ключевое слово extends, после которого идет имя базового класса.
+ Для класса Employee базовым является Person, и поэтому класс Employee наследует все те же поля и методы, которые есть в классе Person.<br><br>
+Если в базовом классе определены конструкторы, то в конструкторе производного класса необходимо вызвать один из конструкторов базового класса с помощью ключевого слова super. Например, класс Person имеет конструктор, который принимает один параметр. Поэтому в классе Employee в конструкторе нужно вызвать конструктор класса Person. 
+То есть вызов super(name) будет представлять вызов конструктора класса Person.<br><br>
+При вызове конструктора после слова super в скобках идет перечисление передаваемых аргументов. При этом вызов конструктора базового класса должен идти в самом начале в конструкторе производного класса. Таким образом, установка имени сотрудника делегируется конструктору базового класса.<br>
+Причем даже если производный класс никакой другой работы не производит в конструкторе, как в примере выше, все равно необходимо вызвать конструктор базового класса.<br><br>
+Производный класс имеет доступ ко всем методам и полям базового класса (даже если базовый класс находится в другом пакете) кроме тех, которые определены с модификатором private. При этом производный класс также может добавлять свои поля и методы.<br>
+Можно запретить наследование с помощью ключевого слова final. Например:<br></font>
+<div style="overflow: auto; width:60%; height:auto;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">1</span><span style="color:green">|</span> public final class Person { }</li>
+</ul>
+</div>
+<br><br>
+</body>
+</html>

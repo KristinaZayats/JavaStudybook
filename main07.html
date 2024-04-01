@@ -1,0 +1,123 @@
+<html>
+<body>
+<h2><center>Функции, рекурсия</center></h2>
+<font size="4">Если переменные и константы хранят некоторые значения, то функции содержат в себе набор операторов, которые выполняют определенные действия.<br>
+Общее определение функций выглядит следующим образом:<br></font>
+<div style="overflow: auto; width:60%; height:auto;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">1</span><span style="color:green">|</span> <модификаторы> <тип возвращаемого значения> <название функции> (<параметры>){</li>
+<li><span style="color:#949494">2</span><span style="color:green">|</span> &emsp;<тело функции></li>
+<li><span style="color:#949494">3</span><span style="color:green">|</span> }</li>
+</ul>
+</div>
+<font size="4">Модификаторы и параметры необязательны.<br>
+По умолчанию главный класс любой программы на Java содержит функцию main, которая служит точкой входа в программу:<br></font>
+<div style="overflow: auto; width:60%; height:auto;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">1</span><span style="color:green">|</span> public static void main(String[] args) {</li>
+<li><span style="color:#949494">2</span><span style="color:green">|</span> &emsp;System.out.println("привет мир!");</li>
+<li><span style="color:#949494">3</span><span style="color:green">|</span> }</li>
+</ul>
+</div>
+<font size="4">Ключевые слова public и static являются модификаторами. Далее идет тип возвращаемого значения. Ключевое слово void указывает на то, что функция ничего не возвращает.<br>
+Затем идут название функции - main и в скобках параметры функции - String[] args. И в фигурные скобки заключено тело функции - все действия, которые она выполняет.<br>
+Еще несколько функций:<br></font>
+<div style="overflow: auto; width:60%; height:30%;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">&nbsp;1&nbsp;</span><span style="color:green">|</span> public class Program{</li>
+<li><span style="color:#949494">&nbsp;2&nbsp;</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">&nbsp;3&nbsp;</span><span style="color:green">|</span> &emsp;public static void main (String args[]){</li>
+<li><span style="color:#949494">&nbsp;4&nbsp;</span><span style="color:green">|</span> &emsp;}</li>
+<li><span style="color:#949494">&nbsp;5&nbsp;</span><span style="color:green">|</span> &emsp;void hello(){</li>
+<li><span style="color:#949494">&nbsp;6&nbsp;</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">&nbsp;7&nbsp;</span><span style="color:green">|</span> &emsp;&emsp;System.out.println("Hello");</li>
+<li><span style="color:#949494">&nbsp;8&nbsp;</span><span style="color:green">|</span> &emsp;}</li>
+<li><span style="color:#949494">&nbsp;9&nbsp;</span><span style="color:green">|</span> &emsp;void welcome(){</li>
+<li><span style="color:#949494">10</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">11</span><span style="color:green">|</span> &emsp;&emsp;System.out.println("Welcome to Java 10");</li>
+<li><span style="color:#949494">12</span><span style="color:green">|</span> &emsp;}</li>
+<li><span style="color:#949494">13</span><span style="color:green">|</span> }</li>
+</ul>
+</div>
+<font size="4">Здесь определены две дополнительных функции: hello и welcome, каждая из которых выводит некоторую строку на консоль. Функции определяются внутри класса - в данном случае внутри класса Program, в котором определена функция main.<br><br>
+Но если скомпилировать и запустить данную программу, то на консоли ничего не появится. В примере выше были определены две функции, но нигде не вызывались. По умолчанию в программе Java выполняется только функция main и все ее содержимое. 
+Поэтому, если необходимо, чтобы другие функции тоже выполнялись, их надо вызвать в функции main.<br>
+Вызов функции осуществляется в форме:<br></font>
+<div style="overflow: auto; width:60%; height:auto;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">1</span><span style="color:green">|</span> <имя функции>(<аргументы>);</li>
+</ul>
+</div>
+<font size="4">После имени функции указываются скобки, в которых перечисляются аргументы - значения для параметров функции.<br>
+Чтобы вызвать в функции main другие функции, которые определены в одном классе с функцией main, они должны иметь модификатор static.<br>
+С помощью параметров можно передать в функции различные данные, которые будут использоваться для вычислений. Например:<br></font>
+<div style="overflow: auto; width:60%; height:auto;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">1</span><span style="color:green">|</span> static void sum(int x, int y){</li>
+<li><span style="color:#949494">2</span><span style="color:green">|</span> &emsp;int z = x + y;</li>
+<li><span style="color:#949494">3</span><span style="color:green">|</span> &emsp;System.out.println(z);</li>
+<li><span style="color:#949494">4</span><span style="color:green">|</span> }</li>
+</ul>
+</div>
+<font size="4">Данная функция принимает два параметра - два числа, складывает их и выводит их сумму на консоль, а при вызове этой функции в программе необходимо передать на место параметров значения, которые соответствуют типу параметра.<br></font>
+<h2><center>Параметры переменной длины</center></h2>
+<font size="4">Функция может принимать параметры переменной длины одного типа. Например, необходимо передать в функцию набор чисел и вычислить их сумму, но точно неизвестно, сколько именно чисел будет передано. Параметры переменной длины позволяют решить эту задачу:<br></font>
+<div style="overflow: auto; width:60%; height:30%;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">&nbsp;1&nbsp;</span><span style="color:green">|</span> public class Program{</li>
+<li><span style="color:#949494">&nbsp;2&nbsp;</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">&nbsp;3&nbsp;</span><span style="color:green">|</span> &emsp;public static void main (String args[]){</li>
+<li><span style="color:#949494">&nbsp;4&nbsp;</span><span style="color:green">|</span> &emsp;&emsp;sum(1, 2, 3);           // 6</li>
+<li><span style="color:#949494">&nbsp;5&nbsp;</span><span style="color:green">|</span> &emsp;&emsp;sum(1, 2, 3, 4, 5);     // 15</li>
+<li><span style="color:#949494">&nbsp;6&nbsp;</span><span style="color:green">|</span> &emsp;&emsp;sum();                  // 0</li>
+<li><span style="color:#949494">&nbsp;7&nbsp;</span><span style="color:green">|</span> &emsp;}</li>
+<li><span style="color:#949494">&nbsp;8&nbsp;</span><span style="color:green">|</span> &emsp;static void sum(int ...nums){</li>
+<li><span style="color:#949494">&nbsp;9&nbsp;</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">10</span><span style="color:green">|</span> &emsp;&emsp;int result =0;</li>
+<li><span style="color:#949494">11</span><span style="color:green">|</span> &emsp;&emsp;for(int n: nums)</li>
+<li><span style="color:#949494">12</span><span style="color:green">|</span> &emsp;&emsp;&emsp;result += n;</li>
+<li><span style="color:#949494">13</span><span style="color:green">|</span> &emsp;&emsp;System.out.println(result);</li>
+<li><span style="color:#949494">14</span><span style="color:green">|</span> &emsp;}</li>
+<li><span style="color:#949494">15</span><span style="color:green">|</span> }</li>
+</ul>
+</div>
+<font size="4">Многоточие перед названием параметра int ...nums указывает на то, что он будет необязательным и будет представлять массив. Можно передать в функцию sum одно число, несколько чисел, а можно вообще не передавать никаких параметров. Причем, если необходимо передать несколько параметров, то необязательный параметр должен указываться в конце:<br></font>
+<div style="overflow: auto; width:60%; height:30%;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">&nbsp;1&nbsp;</span><span style="color:green">|</span> public static void main(String[] args) {</li>
+<li><span style="color:#949494">&nbsp;2&nbsp;</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">&nbsp;3&nbsp;</span><span style="color:green">|</span> &emsp;sum("Welcome!", 20,10);</li>
+<li><span style="color:#949494">&nbsp;4&nbsp;</span><span style="color:green">|</span> &emsp;sum("Hello World!");</li>
+<li><span style="color:#949494">&nbsp;5&nbsp;</span><span style="color:green">|</span> }</li>
+<li><span style="color:#949494">&nbsp;6&nbsp;</span><span style="color:green">|</span> static void sum(String message, int ...nums){</li>
+<li><span style="color:#949494">&nbsp;7&nbsp;</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">&nbsp;8&nbsp;</span><span style="color:green">|</span> &emsp;System.out.println(message);</li>
+<li><span style="color:#949494">&nbsp;9&nbsp;</span><span style="color:green">|</span> &emsp;int result =0;</li>
+<li><span style="color:#949494">10</span><span style="color:green">|</span> &emsp;for(int x:nums)</li>
+<li><span style="color:#949494">11</span><span style="color:green">|</span> &emsp;&emsp;result += x;</li>
+<li><span style="color:#949494">12</span><span style="color:green">|</span> &emsp;System.out.println(result);</li>
+<li><span style="color:#949494">13</span><span style="color:green">|</span> }</li>
+</ul>
+</div>
+<h2><center>Рекурсия</center></h2>
+<font size="4">Главное отличие рекурсивных функций от обычных состоит в том, что рекурсивная функция может вызывать саму себя.<br>
+Например, функция, которая вычисляет факториал числа:<br></font>
+<div style="overflow: auto; width:60%; height:auto;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">1</span><span style="color:green">|</span> static int factorial(int x){</li>
+<li><span style="color:#949494">2</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">3</span><span style="color:green">|</span> &emsp;if (x == 1){</li>
+<li><span style="color:#949494">4</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">5</span><span style="color:green">|</span> &emsp;&emsp;return 1;</li>
+<li><span style="color:#949494">6</span><span style="color:green">|</span> &emsp;}</li>
+<li><span style="color:#949494">7</span><span style="color:green">|</span> &emsp;return x * factorial(x - 1);</li>
+<li><span style="color:#949494">8</span><span style="color:green">|</span> }</li>
+</ul>
+</div>
+<font size="4">Сначала проверяется условие: если вводимое число не равно 1, то оно умножается на результат этой же функции, в которую в качестве параметра передается число x-1. То есть происходит рекурсивный спуск. И так дальше, пока не будет достигнут момент, когда значение параметра не будет равно единице.<br>
+Рекурсивная функция обязательно должна иметь некоторый базовый вариант, который использует оператор return и который помещается в начале функции. В случае с факториалом это if (x == 1) return 1;.<br><br> 
+Все рекурсивные вызовы должны обращаться к подфункциям, которые в конечном счете сходятся к базовому варианту. Так, при передаче в функцию положительного числа при дальнейших рекурсивных вызовах подфункций в них будет передаваться каждый раз число, меньшее на единицу. В конце концов будет достигнута ситуация, когда число будет равно 1, и будет использован базовый вариант.<br></font>
+<br>
+
+</body>
+</html>

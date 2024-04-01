@@ -1,0 +1,86 @@
+<html>
+<body>
+<h2><center>Массивы</center></h2>
+<font size="4">Массив представляет набор однотипных значений. Объявление массива похоже на объявление обычной переменной, которая хранит одиночное значение, причем есть два способа объявления массива:<br></font>
+<div style="overflow: auto; width:60%; height:auto;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">1</span><span style="color:green">|</span> <тип данных> <название массива>[];</li>
+<li><span style="color:#949494">2</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">3</span><span style="color:green">|</span> <тип данных>[] <название массива>;</li>
+</ul>
+</div>
+<font size="4">После объявления массива можно инициализировать его.<br>
+Создание массива производится с помощью следующей конструкции: new  <тип данных>[<количество элементов>], где new - ключевое слово, выделяющее память для указанного в скобках количества элементов.<br>
+Также можно сразу при объявлении массива инициализировать его:<br></font>
+<div style="overflow: auto; width:60%; height:auto;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">1</span><span style="color:green">|</span> int nums[] = new int[4];    // массив из 4 чисел</li>
+</ul>
+</div>
+<font size="4">При подобной инициализации все элементы массива имеют значение по умолчанию. Для числовых типов (в том числе для типа char) это число 0, для типа boolean это значение false, а для остальных объектов это значение null. <br>
+Однако также можно задать конкретные значения для элементов массива при его создании:<br></font>
+<div style="overflow: auto; width:60%; height:auto;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">1</span><span style="color:green">|</span> // эти два способа равноценны</li>
+<li><span style="color:#949494">2</span><span style="color:green">|</span> int[] nums = new int[] { 1, 2, 3, 5 };</li>
+<li><span style="color:#949494">3</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">4</span><span style="color:green">|</span> int[] nums2 = { 1, 2, 3, 5 };</li>
+</ul>
+</div>
+<font size="4">В этом случае в квадратных скобках не указывается размер массива, так как он вычисляется по количеству элементов в фигурных скобках.<br>
+После создания массива можно обратиться к любому его элементу по индексу, который передается в квадратных скобках после названия переменной массива. Индексация элементов массива начинается с 0.<br></font>
+<h2><center>Длина массива</center></h2>
+<font size="4">Важнейшим свойством, которым обладают массивы, является свойство length, возвращающее длину массива, то есть количество его элементов:<br></font>
+<div style="overflow: auto; width:60%; height:auto;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">1</span><span style="color:green">|</span> int[] nums = {1, 2, 3, 4, 5};</li>
+<li><span style="color:#949494">2</span><span style="color:green">|</span> int length = nums.length;   // 5</li>
+</ul>
+</div>
+<font size="4">Нередко бывает неизвестным последний индекс, и чтобы получить последний элемент массива, можно использовать это свойство:<br></font>
+<div style="overflow: auto; width:60%; height:auto;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">1</span><span style="color:green">|</span> int last = nums[nums.length-1];</li>
+</ul>
+</div>
+<h2><center>Многомерные массивы</center></h2>
+<font size="4">Ранее были рассмотрены одномерные массивы, которые можно представить как цепочку или строку однотипных значений. Кроме одномерных, массивы также бывают и многомерными. Наиболее известный многомерный массив - таблица, представляющая двумерный массив:<br></font>
+<div style="overflow: auto; width:60%; height:auto;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">1</span><span style="color:green">|</span> int[] nums1 = new int[] { 0, 1, 2, 3, 4, 5 };</li>
+<li><span style="color:#949494">2</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">3</span><span style="color:green">|</span> int[][] nums2 = { { 0, 1, 2 }, { 3, 4, 5 } };</li>
+</ul>
+</div>
+<font size="4">Визуально оба массива можно представить следующим образом:<br>
+<center><img src="img04.png" width="20%" height="40%"></center><br>
+Поскольку массив nums2 двумерный, он представляет собой простую таблицу. Его также можно было создать следующим образом: int[][] nums2 = new int[2][3];. Количество квадратных скобок указывает на размерность массива, а числа в скобках - на количество строк и столбцов.<br></font>
+<h2><center>Цикл foreach</center></h2>
+<font size="4">Специальная версия цикла for предназначена для перебора элементов в наборах элементов, например, в массивах и коллекциях. Она аналогична действию цикла foreach, который имеется в других языках программирования. Формальное ее объявление:<br></font>
+<div style="overflow: auto; width:60%; height:auto;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">1</span><span style="color:green">|</span> for (<тип данных> <название переменной> : <контейнер>){</li>
+<li><span style="color:#949494">2</span><span style="color:green">|</span> &emsp;<действия></li>
+<li><span style="color:#949494">3</span><span style="color:green">|</span> }</li>
+</ul>
+</div>
+<h2><center>Перебор многомерных массивов в цикле</center></h2>
+<div style="overflow: auto; width:60%; height:30%;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">&nbsp;1&nbsp;</span><span style="color:green">|</span> int[][] nums = new int[][]</li>
+<li><span style="color:#949494">&nbsp;2&nbsp;</span><span style="color:green">|</span> {</li>
+<li><span style="color:#949494">&nbsp;3&nbsp;</span><span style="color:green">|</span> &emsp;{1, 2, 3},</li>
+<li><span style="color:#949494">&nbsp;4&nbsp;</span><span style="color:green">|</span> &emsp;{4, 5, 6},</li>
+<li><span style="color:#949494">&nbsp;5&nbsp;</span><span style="color:green">|</span> &emsp;{7, 8, 9}</li>
+<li><span style="color:#949494">&nbsp;6&nbsp;</span><span style="color:green">|</span> };</li>
+<li><span style="color:#949494">&nbsp;7&nbsp;</span><span style="color:green">|</span> for (int i = 0; i < nums.length; i++){</li>
+<li><span style="color:#949494">&nbsp;8&nbsp;</span><span style="color:green">|</span> &emsp;for(int j=0; j < nums[i].length; j++){</li>
+<li><span style="color:#949494">&nbsp;9&nbsp;</span><span style="color:green">|</span> &emsp;&emsp;System.out.printf("%d ", nums[i][j]);</li>
+<li><span style="color:#949494">10</span><span style="color:green">|</span> &emsp;}</li>
+<li><span style="color:#949494">11</span><span style="color:green">|</span> &emsp;System.out.println();</li>
+<li><span style="color:#949494">12</span><span style="color:green">|</span> }</li>
+</ul>
+</div><br>
+<font size="4">Сначала создается цикл для перебора по строкам, а затем внутри первого цикла создается внутренний цикл для перебора по столбцам конкретной строки. Подобным образом можно перебрать и трехмерные массивы и наборы с большим количеством размерностей.<br><br></font>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<html>
+<body>
+<h2><center>Условия и циклы</center></h2>
+<h2><center>Конструкция if/else</center></h2>
+<font size="4">Выражение if/else проверяет истинность некоторого условия и в зависимости от результатов проверки выполняет определенный код.<br>
+Конструкция if/else имеет следующий синтаксис:<br></font>
+<div style="overflow: auto; width:60%; height:auto;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">1</span><span style="color:green">|</span> if (<условие>) {<инструкция 1>} //инструкция 1 выполняется при выполнении условия</li>
+<li><span style="color:#949494">2</span><span style="color:green">|</span> else {<инструкция 2>} // инструкция 2 выполняется при невыполнении условия</li>
+</ul>
+</div>
+<font size="4">В блоке else также можно добавить условие:<br></font>
+<div style="overflow: auto; width:60%; height:auto;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">1</span><span style="color:green">|</span> else if (<условие 2>) {<инструкция>}</li>
+</ul>
+</div>
+<font size="4">Таких блоков else может быть сколько угодно. Кроме того, они могут вообще не использоваться.<br>
+Также возможно соединить сразу несколько условий, используя логические операторы &&, ||, == и др.<br></font>
+
+<h2><center>Конструкция switch/case</center></h2>
+<font size="4">Конструкция switch/case аналогична конструкции if/else, так как позволяет обработать сразу несколько условий. Она имеет следующий вид:<br></font>
+<div style="overflow: auto; width:60%; height:auto;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">1</span><span style="color:green">|</span> switch(&lt;переменная&gt;) { </li>
+<li><span style="color:#949494">2</span><span style="color:green">|</span> &emsp;case <значение 1>: {<инструкция 1>}</li>
+<li><span style="color:#949494">3</span><span style="color:green">|</span> &emsp;case <значение 2>:{<инструкция 2>}</li>
+<li><span style="color:#949494">4</span><span style="color:green">|</span> &emsp;…</li>
+<li><span style="color:#949494">5</span><span style="color:green">|</span> &emsp;case <значение n>: {<инструкция n>}</li>
+<li><span style="color:#949494">6</span><span style="color:green">|</span> &emsp;default: {<инструкция в случае невыполнения ни одной из предыдущих>}</li>
+<li><span style="color:#949494">7</span><span style="color:green">|</span> }</li>
+</ul>
+</div>
+<font size="4">Здесь в блоке case в случае равенства соответствующего значения значению переменной, указанной в блоке switch, выполняется нужная инструкция. 
+В случае несоответствия ни одному из значений выполняется инструкция из блока default, его использование необязательно.<br>
+Возможно использование одной инструкции для нескольких значений:<br></font>
+<div style="overflow: auto; width:60%; height:auto;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">1</span><span style="color:green">|</span> …</li>
+<li><span style="color:#949494">2</span><span style="color:green">|</span> case <значение 1>:</li>
+<li><span style="color:#949494">3</span><span style="color:green">|</span> case <значение 2>: {инструкция}</li>
+<li><span style="color:#949494">4</span><span style="color:green">|</span> …</li>
+</ul>
+</div>
+
+<h2><center>Тернарная операция</center></h2>
+<font size="4">Тернарная операция имеет следующий синтаксис: <первый операнд - условие> ? <второй операнд> : <третий операнд>. Таким образом, в этой операции участвуют сразу три операнда. 
+В зависимости от условия тернарная операция возвращает второй или третий операнд: если условие равно true, то возвращается второй операнд; если условие равно false, то третий. Например:<br></font>
+<div style="overflow: auto; width:60%; height:auto;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">1</span><span style="color:green">|</span> int z = x&lt;y? (x+y) : (x-y);</li>
+</ul>
+</div>
+<font size="4">Здесь результатом тернарной операции является переменная z. Сначала проверяется условие x<y. И если оно соблюдается, то z будет равно второму операнду - (x+y), иначе z будет равно третьему операнду.<br></font>
+
+<h2><center>Циклы</center></h2>
+<font size="4">В языке Java есть следующие виды циклов:<br>
+<ul>
+<li>for;</li>
+<li>while;</li>
+<li>do...while.</li>
+</ul></font>
+
+<h2><center>Цикл for</center></h2>
+<font size="4">Цикл for имеет следующее формальное определение:<br></font>
+<div style="overflow: auto; width:60%; height:auto;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">1</span><span style="color:green">|</span> for (<инициализация счетчика>; <условие>; <изменение счетчика>)</li>
+<li><span style="color:#949494">2</span><span style="color:green">|</span> {</li>
+<li><span style="color:#949494">3</span><span style="color:green">|</span> &emsp;// действия</li>
+<li><span style="color:#949494">4</span><span style="color:green">|</span> }</li>
+</ul>
+</div><br>
+<font size="4">Необязательно указывать все условия при объявлении цикла. Например, можно написать так:<br></font>
+<div style="overflow: auto; width:60%; height:auto;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">1</span><span style="color:green">|</span> int i = 1;</li>
+<li><span style="color:#949494">2</span><span style="color:green">|</span> for (; ;){</li>
+<li><span style="color:#949494">3</span><span style="color:green">|</span> &emsp;System.out.printf("Квадрат числа %d равен %d \n", i, i * i);</li>
+<li><span style="color:#949494">4</span><span style="color:green">|</span> }</li>
+</ul>
+</div><br>
+<font size="4">Определение цикла осталось тем же, только теперь блоки в определении пустые: for (; ;). Теперь нет инициализированной переменной-счетчика, нет условия, поэтому цикл будет работать вечно - бесконечный цикл.<br>
+Либо можно опустить ряд блоков:<br></font>
+<div style="overflow: auto; width:60%; height:auto;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">1</span><span style="color:green">|</span> int i = 1;</li>
+<li><span style="color:#949494">2</span><span style="color:green">|</span> for (; i&lt9;){</li>
+<li><span style="color:#949494">3</span><span style="color:green">|</span> &emsp;System.out.printf("Квадрат числа %d равен %d \n", i, i * i);</li>
+<li><span style="color:#949494">4</span><span style="color:green">|</span> &emsp;i++;</li>
+<li><span style="color:#949494">5</span><span style="color:green">|</span> }</li>
+</ul>
+</div><br>
+<font size="4">Этот пример эквивалентен первому примеру: также есть счетчик, только создан он вне цикла, есть условие выполнения цикла, и есть приращение счетчика уже в самом блоке for.<br>
+Цикл for может определять сразу несколько переменных и управлять ими:<br></font>
+<div style="overflow: auto; width:60%; height:auto;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">1</span><span style="color:green">|</span> int n = 10;</li>
+<li><span style="color:#949494">2</span><span style="color:green">|</span> for(int i=0, j = n - 1; i < j; i++, j--){</li>
+<li><span style="color:#949494">3</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">4</span><span style="color:green">|</span> &emsp;System.out.println(i * j);</li>
+<li><span style="color:#949494">5</span><span style="color:green">|</span> }</li>
+</ul>
+</div><br>
+
+<h2><center>Цикл do…while</center></h2>
+<font size="4">Цикл do сначала выполняет код цикла, а потом проверяет условие в инструкции while. И пока это условие истинно, цикл повторяется. Например:<br></font>
+<div style="overflow: auto; width:60%; height:auto;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">1</span><span style="color:green">|</span> int j = 7;</li>
+<li><span style="color:#949494">2</span><span style="color:green">|</span> do{</li>
+<li><span style="color:#949494">3</span><span style="color:green">|</span> &emsp;System.out.println(j);</li>
+<li><span style="color:#949494">4</span><span style="color:green">|</span> &emsp;j--;</li>
+<li><span style="color:#949494">5</span><span style="color:green">|</span> }</li>
+<li><span style="color:#949494">6</span><span style="color:green">|</span> while (j > 0);</li>
+</ul>
+</div><br>
+<font size="4">В данном случае код цикла сработает 7 раз, пока j не окажется равным нулю. Важно отметить, что цикл do гарантирует хотя бы однократное 
+выполнение действий, даже если условие в инструкции while не будет истинно.<br></font>
+
+<h2><center>Цикл while</center></h2>
+<font size="4">Цикл while сразу проверяет истинность некоторого условия, и если условие истинно, то код цикла выполняется:<br></font>
+<div style="overflow: auto; width:60%; height:auto;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">1</span><span style="color:green">|</span> int j = 6;</li>
+<li><span style="color:#949494">2</span><span style="color:green">|</span> while (j > 0){</li>
+<li><span style="color:#949494">3</span><span style="color:green">|</span> &emsp;System.out.println(j);</li>
+<li><span style="color:#949494">4</span><span style="color:green">|</span> &emsp;j--;</li>
+<li><span style="color:#949494">5</span><span style="color:green">|</span> }</li>
+</ul>
+</div>
+
+<h2><center>Операторы continue и break</center></h2>
+<font size="4">Оператор break позволяет выйти из цикла в любой его момент, даже если цикл не закончил свою работу. Оператор continue, в свою очередь, переходит к следующей итерации цикла, прерывая текущую.<br><br></font>
+</body>
+</html>

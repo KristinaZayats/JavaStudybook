@@ -1,0 +1,32 @@
+<html>
+<body>
+<h2><center>Абстракция</center></h2>
+<font size="4">Абстракция - придание объекту характеристик, которые четко определяют его концептуальные границы, отличая от всех других объектов. Основная идея состоит в том, чтобы отделить способ использования составных объектов данных от деталей их реализации в виде более простых объектов.<br>
+Абстрактный класс похож на обычный класс. В абстрактном классе также можно определить поля и методы, но в то же время нельзя создать объект или экземпляр абстрактного класса. 
+Абстрактные классы призваны предоставлять базовый функционал для классов-наследников, а производные классы уже реализуют этот функционал.<br>
+При определении абстрактных классов используется ключевое слово abstract:<br></font>
+<div style="overflow: auto; width:60%; height:auto;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">1</span><span style="color:green">|</span> public abstract class Human{</li>
+<li><span style="color:#949494">2</span><span style="color:green">|</span> &emsp;</li>
+<li><span style="color:#949494">3</span><span style="color:green">|</span> &emsp;private String name;</li>
+<li><span style="color:#949494">4</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">5</span><span style="color:green">|</span> &emsp;public String getName() { return name; }</li>
+<li><span style="color:#949494">6</span><span style="color:green">|</span> }</li>
+</ul>
+</div>
+<font size="4">Главное отличие состоит в том, что использовать конструктор абстрактного класса для создания его объекта невозможно. Например, следующим образом:<br></font>
+<div style="overflow: auto; width:60%; height:auto;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">1</span><span style="color:green">|</span> Human h = new Human();</li>
+</ul>
+</div>
+<font size="4">Кроме обычных методов абстрактный класс может содержать абстрактные методы. Такие методы определяются с помощью ключевого слова abstract и не имеют никакой реализации:<br></font>
+<div style="overflow: auto; width:60%; height:auto;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">1</span><span style="color:green">|</span> public abstract void display();</li>
+</ul>
+</div>
+<font size="4">Производный класс обязан переопределить и реализовать все абстрактные методы, которые имеются в базовом абстрактном классе. Также следует учитывать, что если класс имеет хотя бы один абстрактный метод, то данный класс должен быть определен как абстрактный.<br><br></font>
+</body>
+</html>

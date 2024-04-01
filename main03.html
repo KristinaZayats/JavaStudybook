@@ -1,0 +1,91 @@
+<html>
+<body>
+<h2><center>Ввод и вывод</center></h2>
+<font size="4">Наиболее простой способ взаимодействия с пользователем представляет консоль. Для взаимодействия с консолью в Java применяется класс System, а его функциональность обеспечивает консольный ввод и вывод.<br></font>
+<h2><center>Вывод на консоль</center></h2>
+<font size="4">Для создания потока вывода в классе System определен объект out. В этом объекте определен метод println, который позволяет вывести на консоль некоторое значение с последующим переводом курсора консоли на следующую строку. Например:<br></font>
+<div style="overflow: auto; width:60%; height:auto;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">1</span><span style="color:green">|</span> System.out.println("Hello world!");</li>
+</ul>
+</div>
+<font size="4">В метод println передается любое значение, как правило, строка, которое необходимо вывести на консоль. И в данном случае вывод будет следующим:<br><br>
+<img src="img02.png"><br><br>
+При необходимости можно и не переводить курсор на следующую строку. В этом случае можно использовать метод System.out.print(), который аналогичен println за тем исключением, что не осуществляет перевода на следующую строку.<br>
+Но с помощью метода System.out.print также можно осуществить перевод каретки на следующую строку. Для этого следует использовать управляющую последовательность \n:<br></font>
+<div style="overflow: auto; width:60%; height:auto;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">1</span><span style="color:green">|</span> System.out.print("Hello world \n");</li>
+</ul>
+</div>
+<font size="4">Нередко необходимо подставлять в строку какие-нибудь данные. Например, имеются два числа, и необходимо вывести их значения на экран. В этом случае пример может быть таким:<br></font>
+<div style="overflow: auto; width:60%; height:auto;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">1</span><span style="color:green">|</span> int x=5;</li>
+<li><span style="color:#949494">2</span><span style="color:green">|</span> int y=6;</li>
+<li><span style="color:#949494">3</span><span style="color:green">|</span> System.out.println("x=" + x + "; y=" + y);</li>
+</ul>
+</div>
+<font size="4">Консольный вывод программы:<br><br>
+<img src="img03.png"><br><br>
+Но в Java есть также функция для форматированного вывода, унаследованная от языка С: System.out.printf(). С ее помощью возможно переписать предыдущий пример следующим образом:<br></font>
+<div style="overflow: auto; width:60%; height:auto;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">1</span><span style="color:green">|</span> int x=5;</li>
+<li><span style="color:#949494">2</span><span style="color:green">|</span> int y=6;</li>
+<li><span style="color:#949494">3</span><span style="color:green">|</span> System.out.printf("x=%d; y=%d \n", x, y);</li>
+</ul>
+</div>
+<font size="4">В данном случае символы %d обозначают спецификатор, вместо которого подставляется один из аргументов. Спецификаторов и соответствующих им аргументов может быть множество. В данном случае имеется только два аргумента, поэтому вместо первого %d подставляет значение переменной
+ x, а вместо второго - значение переменной y. Буква d означает, что данный спецификатор будет использоваться для вывода целочисленных значений.<br>
+Кроме спецификатора %d можно использовать еще ряд спецификаторов для других типов данных:<br>
+<ul>
+<li>%x: для вывода шестнадцатеричных чисел;</li>
+<li>%f: для вывода чисел с плавающей точкой;</li>
+<li>%e: для вывода чисел в экспоненциальной форме, например, 1.3e+01;</li>
+<li>%c: для вывода одиночного символа;</li>
+<li>%s: для вывода строковых значений.</li>
+</ul>
+При выводе чисел с плавающей точкой можно указать количество знаков после запятой, для этого используется спецификатор %.2f, где .2 указывает, что после запятой будет два знака.<br></font>
+<h2><center>Ввод с консоли</center></h2>
+<font size="4">Для получения ввода с консоли в классе System определен объект in. Однако непосредственно через объект System.in
+ не очень удобно работать, поэтому, как правило, используется класс Scanner, который, использует System.in. Пример маленькой программы, которая осуществляет ввод чисел:<br></font>
+<div style="overflow: auto; width:60%; height:30%;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">&nbsp;1&nbsp;</span><span style="color:green">|</span> import java.util.Scanner;</li>
+<li><span style="color:#949494">&nbsp;2&nbsp;</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">&nbsp;3&nbsp;</span><span style="color:green">|</span> &emsp;public class Program {</li>
+<li><span style="color:#949494">&nbsp;4&nbsp;</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">&nbsp;5&nbsp;</span><span style="color:green">|</span> &emsp;&emsp;public static void main(String[] args) {</li>
+<li><span style="color:#949494">&nbsp;6&nbsp;</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">&nbsp;7&nbsp;</span><span style="color:green">|</span> &emsp;&emsp;&emsp;Scanner in = new Scanner(System.in);</li>
+<li><span style="color:#949494">&nbsp;8&nbsp;</span><span style="color:green">|</span> &emsp;&emsp;&emsp;System.out.print("Input a number: ");</li>
+<li><span style="color:#949494">&nbsp;9&nbsp;</span><span style="color:green">|</span> &emsp;&emsp;&emsp;int num = in.nextInt();</li>
+<li><span style="color:#949494">10</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">11</span><span style="color:green">|</span> &emsp;&emsp;&emsp;System.out.printf("Your number: %d \n", num);</li>
+<li><span style="color:#949494">12</span><span style="color:green">|</span> &emsp;&emsp;&emsp;in.close();</li>
+<li><span style="color:#949494">13</span><span style="color:green">|</span> &emsp;&emsp;}</li>
+<li><span style="color:#949494">14</span><span style="color:green">|</span> &emsp;}</li>
+</ul>
+</div><br>
+<font size="4">Так как класс Scanner находится в пакете java.util, то сначала необходимо его импортировать с помощью инструкции import java.util.Scanner.<br>
+Для создания самого объекта Scanner в его конструктор передается объект System.in. После этого можно получать вводимые значения. Например, в данном случае вначале выводится приглашение к вводу и затем вводимое число передается в переменную num.<br><br>
+Чтобы получить введенное число, используется метод in.nextInt();, который возвращает введенное с клавиатуры целочисленное значение.<br>
+Класс Scanner имеет еще ряд методов, которые позволяют получить введенные пользователем значения:<br>
+<ul>
+<li>next(): считывает введенную строку до первого пробела;</li>
+<li>nextLine(): считывает всю введенную строку;</li>
+<li>nextInt(): считывает введенное число int;</li>
+<li>nextDouble(): считывает введенное число double;</li>
+<li>nextBoolean(): считывает значение boolean;</li>
+<li>nextByte(): считывает введенное число byte;</li>
+<li>nextFloat(): считывает введенное число float;</li>
+<li>nextShort(): считывает введенное число short.</li>
+</ul>
+При вводе чисел с плавающей точкой в консоль разделительный знак определяется локализацией системы.<br><br>
+
+
+
+
+</body>
+</html>

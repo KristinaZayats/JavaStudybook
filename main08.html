@@ -1,0 +1,227 @@
+<html>
+<body>
+<h2><center>Классы и объекты</center></h2>
+<font size="4">Java является объектно-ориентированным языком, поэтому такие понятия как "класс" и "объект" играют в нем ключевую роль. Любую программу на Java можно представить как набор взаимодействующих между собой объектов.<br>
+Шаблоном или описанием объекта является класс, а объект представляет экземпляр этого класса. Класс определяется с помощью ключевого слова class:<br></font>
+<div style="overflow: auto; width:60%; height:auto;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">1</span><span style="color:green">|</span> class Person{ }</li>
+</ul>
+</div>
+<font size="4">В данном случае класс называется Person. После названия класса идут фигурные скобки, между которыми помещается тело класса - то есть его поля и методы (функции, описанные в теле класса). Функции, возвращающие поля класса, называются свойствами.<br><br>
+Любой объект может обладать двумя основными характеристиками: состояние - некоторые данные, которые хранит объект, и поведение - действия, которые может совершать объект.<br>
+Для хранения состояния объекта в классе применяются поля или переменные класса. Для определения поведения объекта в классе применяются методы. Например, класс Person, который представляет человека, мог бы иметь следующее определение:<br></font>
+<div style="overflow: auto; width:60%; height:auto;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">1</span><span style="color:green">|</span> class Person{</li>
+<li><span style="color:#949494">2</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">3</span><span style="color:green">|</span> &emsp;String name;        // имя</li>
+<li><span style="color:#949494">4</span><span style="color:green">|</span> &emsp;int age;            // возраст</li>
+<li><span style="color:#949494">5</span><span style="color:green">|</span> &emsp;void displayInfo(){</li>
+<li><span style="color:#949494">6</span><span style="color:green">|</span> &emsp;&emsp;System.out.printf("Name: %s \tAge: %d\n", name, age);</li>
+<li><span style="color:#949494">7</span><span style="color:green">|</span> &emsp;}</li>
+<li><span style="color:#949494">8</span><span style="color:green">|</span> }</li>
+</ul>
+</div>
+<font size="4">В классе Person определены два поля: name представляет имя человека, а age - его возраст. И также определен метод displayInfo, который ничего не возвращает и просто выводит эти данные на консоль.<br>
+Для использования данного класса подойдет, например, следующая программа:<br></font>
+<div style="overflow: auto; width:60%; height:30%;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">&nbsp;1&nbsp;</span><span style="color:green">|</span> public class Program{</li>
+<li><span style="color:#949494">&nbsp;2&nbsp;</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">&nbsp;3&nbsp;</span><span style="color:green">|</span> &emsp;public static void main(String[] args) {</li>
+<li><span style="color:#949494">&nbsp;4&nbsp;</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">&nbsp;5&nbsp;</span><span style="color:green">|</span> &emsp;&emsp;Person tom;</li>
+<li><span style="color:#949494">&nbsp;6&nbsp;</span><span style="color:green">|</span> &emsp;}</li>
+<li><span style="color:#949494">&nbsp;7&nbsp;</span><span style="color:green">|</span> }</li>
+<li><span style="color:#949494">&nbsp;8&nbsp;</span><span style="color:green">|</span> class Person{</li>
+<li><span style="color:#949494">&nbsp;9&nbsp;</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">10</span><span style="color:green">|</span> &emsp;String name;    // имя</li>
+<li><span style="color:#949494">11</span><span style="color:green">|</span> &emsp;int age;        // возраст</li>
+<li><span style="color:#949494">12</span><span style="color:green">|</span> &emsp;void displayInfo(){</li>
+<li><span style="color:#949494">13</span><span style="color:green">|</span> &emsp;&emsp;System.out.printf("Name: %s \tAge: %d\n", name, age);</li>
+<li><span style="color:#949494">14</span><span style="color:green">|</span> &emsp;}</li>
+<li><span style="color:#949494">15</span><span style="color:green">|</span> }</li>
+</ul>
+</div><br>
+<font size="4">Обычно классы определяются в разных файлах. В данном случае для простоты определены два класса в одном файле. Стоит отметить, что в этом случае только один класс 
+может иметь модификатор public (в данном случае это класс Program), а сам файл кода должен называться по имени этого класса, то есть в данном случае файл должен называться Program.java.<br><br>
+Класс представляет новый тип, поэтому можно определять переменные, которые представляют данный тип. Так, здесь в методе main определена переменная tom, которая представляет класс Person. Но пока эта переменная не указывает ни на какой объект и по умолчанию она имеет значение null. Ее пока невозможно использовать, поэтому вначале необходимо создать объект класса Person.<br></font>
+<h2><center>Конструкторы</center></h2>
+<font size="4">Кроме обычных методов классы могут определять специальные методы, которые называются конструкторами. Конструкторы вызываются при создании нового объекта данного класса. Конструкторы выполняют инициализацию объекта.<br>
+Если в классе не определен ни один конструктор, то для этого класса автоматически создается конструктор без параметров.<br>
+Выше определенный класс Person не имеет никаких конструкторов, поэтому для него автоматически создается конструктор по умолчанию, который можно использовать для создания объекта Person. Например, создание одного объекта:<br></font>
+<div style="overflow: auto; width:60%; height:30%;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">&nbsp;1&nbsp;</span><span style="color:green">|</span> public class Program{</li>
+<li><span style="color:#949494">&nbsp;2&nbsp;</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">&nbsp;3&nbsp;</span><span style="color:green">|</span> &emsp;public static void main(String[] args) {</li>
+<li><span style="color:#949494">&nbsp;4&nbsp;</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">&nbsp;5&nbsp;</span><span style="color:green">|</span> &emsp;&emsp;Person tom = new Person(); // создание объекта</li>
+<li><span style="color:#949494">&nbsp;6&nbsp;</span><span style="color:green">|</span> &emsp;&emsp;tom.displayInfo();</li>
+<li><span style="color:#949494">&nbsp;7&nbsp;</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">&nbsp;8&nbsp;</span><span style="color:green">|</span> &emsp;&emsp;// изменяем имя и возраст</li>
+<li><span style="color:#949494">&nbsp;9&nbsp;</span><span style="color:green">|</span> &emsp;&emsp;tom.name = "Tom";</li>
+<li><span style="color:#949494">10</span><span style="color:green">|</span> &emsp;&emsp;tom.age = 34;</li>
+<li><span style="color:#949494">11</span><span style="color:green">|</span> &emsp;&emsp;tom.displayInfo();</li>
+<li><span style="color:#949494">12</span><span style="color:green">|</span> &emsp;}</li>
+<li><span style="color:#949494">13</span><span style="color:green">|</span> }</li>
+<li><span style="color:#949494">14</span><span style="color:green">|</span> class Person{</li>
+<li><span style="color:#949494">15</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">16</span><span style="color:green">|</span> &emsp;String name;    // имя</li>
+<li><span style="color:#949494">17</span><span style="color:green">|</span> &emsp;int age;        // возраст</li>
+<li><span style="color:#949494">18</span><span style="color:green">|</span> &emsp;void displayInfo(){</li>
+<li><span style="color:#949494">19</span><span style="color:green">|</span> &emsp;&emsp;System.out.printf("Name: %s \tAge: %d\n", name, age);</li>
+<li><span style="color:#949494">20</span><span style="color:green">|</span> &emsp;}</li>
+<li><span style="color:#949494">21</span><span style="color:green">|</span> }</li>
+</ul>
+</div><br>
+<font size="4">Для создания объекта Person используется выражение new Person(). Оператор new выделяет память для объекта Person. Затем вызывается конструктор по умолчанию, который не принимает никаких параметров. 
+В итоге после выполнения данного выражения в памяти будет выделен участок, где будут храниться все данные объекта Person, а переменная tom получит ссылку на созданный объект.<br><br>
+Если конструктор не инициализирует значения переменных объекта, то они получают значения по умолчанию. Для переменных числовых типов это число 0, а для типа string и классов - это значение null.<br>
+После создания объекта можно обратиться к переменным объекта Person через переменную tom и установить или получить их значения, например, tom.name = "Tom".<br><br>
+Консольный вывод:<br>
+<img src="img05.png"><br>
+Если необходимо, чтобы при создании объекта производилась какая-то логика, например, чтобы поля класса получали какие-то определенные значения, то можно определить в классе свои конструкторы. Например:<br></font>
+<div style="overflow: auto; width:60%; height:30%;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">&nbsp;1&nbsp;</span><span style="color:green">|</span> public class Program{</li>
+<li><span style="color:#949494">&nbsp;2&nbsp;</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">&nbsp;3&nbsp;</span><span style="color:green">|</span> &emsp;public static void main(String[] args) {</li>
+<li><span style="color:#949494">&nbsp;4&nbsp;</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">&nbsp;5&nbsp;</span><span style="color:green">|</span> &emsp;&emsp;Person bob = new Person();      // вызов первого конструктора без параметров</li>
+<li><span style="color:#949494">&nbsp;6&nbsp;</span><span style="color:green">|</span> &emsp;&emsp;bob.displayInfo();</li>
+<li><span style="color:#949494">&nbsp;7&nbsp;</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">&nbsp;8&nbsp;</span><span style="color:green">|</span> &emsp;&emsp;Person tom = new Person("Tom"); // вызов второго конструктора с одним параметром</li>
+<li><span style="color:#949494">&nbsp;9&nbsp;</span><span style="color:green">|</span> &emsp;&emsp;tom.displayInfo();</li>
+<li><span style="color:#949494">10</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">11</span><span style="color:green">|</span> &emsp;&emsp;Person sam = new Person("Sam", 25); // вызов третьего конструктора с двумя параметрами</li>
+<li><span style="color:#949494">12</span><span style="color:green">|</span> &emsp;&emsp;sam.displayInfo();</li>
+<li><span style="color:#949494">13</span><span style="color:green">|</span> &emsp;}</li>
+<li><span style="color:#949494">14</span><span style="color:green">|</span> }</li>
+<li><span style="color:#949494">15</span><span style="color:green">|</span> class Person{</li>
+<li><span style="color:#949494">16</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">17</span><span style="color:green">|</span> &emsp;String name;    // имя</li>
+<li><span style="color:#949494">18</span><span style="color:green">|</span> &emsp;int age;        // возраст</li>
+<li><span style="color:#949494">19</span><span style="color:green">|</span> &emsp;Person(){</li>
+<li><span style="color:#949494">20</span><span style="color:green">|</span> &emsp;&emsp;name = "Undefined";</li>
+<li><span style="color:#949494">21</span><span style="color:green">|</span> &emsp;&emsp;age = 18;</li>
+<li><span style="color:#949494">22</span><span style="color:green">|</span> &emsp;}</li>
+<li><span style="color:#949494">23</span><span style="color:green">|</span> &emsp;Person(String n) {</li>
+<li><span style="color:#949494">24</span><span style="color:green">|</span> &emsp;&emsp;name = n;</li>
+<li><span style="color:#949494">25</span><span style="color:green">|</span> &emsp;&emsp;age = 18;</li>
+<li><span style="color:#949494">26</span><span style="color:green">|</span> &emsp;}</li>
+<li><span style="color:#949494">27</span><span style="color:green">|</span> &emsp;Person(String n, int a) {</li>
+<li><span style="color:#949494">28</span><span style="color:green">|</span> &emsp;&emsp;name = n;</li>
+<li><span style="color:#949494">29</span><span style="color:green">|</span> &emsp;&emsp;age = a;</li>
+<li><span style="color:#949494">30</span><span style="color:green">|</span> &emsp;}</li>
+<li><span style="color:#949494">31</span><span style="color:green">|</span> &emsp;void displayInfo(){</li>
+<li><span style="color:#949494">32</span><span style="color:green">|</span> &emsp;&emsp;System.out.printf("Name: %s \tAge: %d\n", name, age);</li>
+<li><span style="color:#949494">33</span><span style="color:green">|</span> &emsp;}</li>
+<li><span style="color:#949494">34</span><span style="color:green">|</span> }</li>
+</ul>
+</div><br>
+<font size="4">Теперь в классе определено три конструктора, каждый из которых принимает различное количество параметров и устанавливает значения полей класса.<br>
+Консольный вывод программы:<br></font>
+<img src="img06.png"><br>
+<h2><center>Ключевое слово this</center></h2>
+<font size="4">Ключевое слово this представляет ссылку на текущий экземпляр класса. Через это ключевое слово можно обращаться к переменным, методам объекта, а также вызывать его конструкторы. Например:<br></font>
+<div style="overflow: auto; width:60%; height:30%;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">&nbsp;1&nbsp;</span><span style="color:green">|</span> public class Program{</li>
+<li><span style="color:#949494">&nbsp;2&nbsp;</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">&nbsp;3&nbsp;</span><span style="color:green">|</span> &emsp;public static void main(String[] args) {</li>
+<li><span style="color:#949494">&nbsp;4&nbsp;</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">&nbsp;5&nbsp;</span><span style="color:green">|</span> &emsp;&emsp;Person undef = new Person();</li>
+<li><span style="color:#949494">&nbsp;6&nbsp;</span><span style="color:green">|</span> &emsp;&emsp;undef.displayInfo();</li>
+<li><span style="color:#949494">&nbsp;7&nbsp;</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">&nbsp;8&nbsp;</span><span style="color:green">|</span> &emsp;&emsp;Person tom = new Person("Tom");</li>
+<li><span style="color:#949494">&nbsp;9&nbsp;</span><span style="color:green">|</span> &emsp;&emsp;tom.displayInfo();</li>
+<li><span style="color:#949494">10</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">11</span><span style="color:green">|</span> &emsp;&emsp;Person sam = new Person("Sam", 25);</li>
+<li><span style="color:#949494">12</span><span style="color:green">|</span> &emsp;&emsp;sam.displayInfo();</li>
+<li><span style="color:#949494">13</span><span style="color:green">|</span> &emsp;}</li>
+<li><span style="color:#949494">14</span><span style="color:green">|</span> }</li>
+<li><span style="color:#949494">15</span><span style="color:green">|</span> class Person{</li>
+<li><span style="color:#949494">16</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">17</span><span style="color:green">|</span> &emsp;String name;    // имя</li>
+<li><span style="color:#949494">18</span><span style="color:green">|</span> &emsp;int age;        // возраст</li>
+<li><span style="color:#949494">19</span><span style="color:green">|</span> &emsp;Person(){</li>
+<li><span style="color:#949494">20</span><span style="color:green">|</span> &emsp;&emsp;this("Undefined", 18);</li>
+<li><span style="color:#949494">21</span><span style="color:green">|</span> &emsp;}</li>
+<li><span style="color:#949494">22</span><span style="color:green">|</span> &emsp;Person(String name) {</li>
+<li><span style="color:#949494">23</span><span style="color:green">|</span> &emsp;&emsp;this(name, 18);</li>
+<li><span style="color:#949494">24</span><span style="color:green">|</span> &emsp;}</li>
+<li><span style="color:#949494">25</span><span style="color:green">|</span> &emsp;Person(String name, int age) {</li>
+<li><span style="color:#949494">26</span><span style="color:green">|</span> &emsp;&emsp;this.name = name;</li>
+<li><span style="color:#949494">27</span><span style="color:green">|</span> &emsp;&emsp;this.age = age;</li>
+<li><span style="color:#949494">28</span><span style="color:green">|</span> &emsp;}</li>
+<li><span style="color:#949494">29</span><span style="color:green">|</span> &emsp;void displayInfo(){</li>
+<li><span style="color:#949494">30</span><span style="color:green">|</span> &emsp;&emsp;System.out.printf("Name: %s \tAge: %d\n", name, age);</li>
+<li><span style="color:#949494">31</span><span style="color:green">|</span> &emsp;}</li>
+<li><span style="color:#949494">32</span><span style="color:green">|</span> }</li>
+</ul>
+</div><br>
+<font size="4">В третьем конструкторе параметры называются так же, как и поля класса, и, чтобы разграничить поля и параметры, применяется ключевое слово this:<br></font>
+<div style="overflow: auto; width:60%; height:auto;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">1</span><span style="color:green">|</span> this.name = name;</li>
+</ul>
+</div>
+<font size="4">Так, в данном случае указывается, что значение параметра name присваивается полю name.<br>
+Кроме того, три конструктора выполняют идентичные действия: устанавливают поля name и age. Чтобы избежать повторов, с помощью this можно вызвать один из конструкторов класса и передать для его параметров необходимые значения:<br></font>
+<div style="overflow: auto; width:60%; height:auto;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">1</span><span style="color:green">|</span> Person(String name) {</li>
+<li><span style="color:#949494">2</span><span style="color:green">|</span> &emsp;this(name, 18);</li>
+<li><span style="color:#949494">3</span><span style="color:green">|</span> }</li>
+</ul>
+</div>
+<font size="4">В итоге результат программы будет тот же, что и в предыдущем примере.<br></font>
+<h2><center>Инициализаторы</center></h2>
+<font size="4">Кроме конструктора начальную инициализацию объекта вполне можно было проводить с помощью инициализатора объекта. Инициализатор выполняется до любого конструктора. То есть в инициализатор можно поместить код, общий для всех конструкторов:<br></font>
+<div style="overflow: auto; width:60%; height:30%;">
+<ul style="list-style: none;">
+<li><span style="color:#949494">&nbsp;1&nbsp;</span><span style="color:green">|</span> public class Program{</li>
+<li><span style="color:#949494">&nbsp;2&nbsp;</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">&nbsp;3&nbsp;</span><span style="color:green">|</span> &emsp;public static void main(String[] args) {</li>
+<li><span style="color:#949494">&nbsp;4&nbsp;</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">&nbsp;5&nbsp;</span><span style="color:green">|</span> &emsp;&emsp;Person undef = new Person();</li>
+<li><span style="color:#949494">&nbsp;6&nbsp;</span><span style="color:green">|</span> &emsp;&emsp;undef.displayInfo();</li>
+<li><span style="color:#949494">&nbsp;7&nbsp;</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">&nbsp;8&nbsp;</span><span style="color:green">|</span> &emsp;&emsp;Person tom = new Person("Tom");</li>
+<li><span style="color:#949494">&nbsp;9&nbsp;</span><span style="color:green">|</span> &emsp;&emsp;tom.displayInfo();</li>
+<li><span style="color:#949494">10</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">11</span><span style="color:green">|</span> &emsp;}</li>
+<li><span style="color:#949494">12</span><span style="color:green">|</span> }</li>
+<li><span style="color:#949494">13</span><span style="color:green">|</span> class Person{</li>
+<li><span style="color:#949494">14</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">15</span><span style="color:green">|</span> &emsp;String name;    // имя</li>
+<li><span style="color:#949494">16</span><span style="color:green">|</span> &emsp;int age;        // возраст</li>
+<li><span style="color:#949494">17</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">18</span><span style="color:green">|</span> &emsp;/*начало блока инициализатора*/</li>
+<li><span style="color:#949494">19</span><span style="color:green">|</span> &emsp;{</li>
+<li><span style="color:#949494">20</span><span style="color:green">|</span> &emsp;&emsp;name = "Undefined";</li>
+<li><span style="color:#949494">21</span><span style="color:green">|</span> &emsp;&emsp;age = 18;</li>
+<li><span style="color:#949494">22</span><span style="color:green">|</span> &emsp;}</li>
+<li><span style="color:#949494">23</span><span style="color:green">|</span> &emsp;/*конец блока инициализатора*/</li>
+<li><span style="color:#949494">24</span><span style="color:green">|</span> &emsp;Person(){</li>
+<li><span style="color:#949494">25</span><span style="color:green">|</span> </li>
+<li><span style="color:#949494">26</span><span style="color:green">|</span> &emsp;}</li>
+<li><span style="color:#949494">27</span><span style="color:green">|</span> &emsp;Person(String name){</li>
+<li><span style="color:#949494">28</span><span style="color:green">|</span> &emsp;&emsp;this.name = name;</li>
+<li><span style="color:#949494">29</span><span style="color:green">|</span> &emsp;}</li>
+<li><span style="color:#949494">30</span><span style="color:green">|</span> &emsp;Person(String name, int age){</li>
+<li><span style="color:#949494">31</span><span style="color:green">|</span> &emsp;&emsp;this.name = name;</li>
+<li><span style="color:#949494">32</span><span style="color:green">|</span> &emsp;&emsp;this.age = age;</li>
+<li><span style="color:#949494">33</span><span style="color:green">|</span> &emsp;}</li>
+<li><span style="color:#949494">34</span><span style="color:green">|</span> &emsp;void displayInfo(){</li>
+<li><span style="color:#949494">35</span><span style="color:green">|</span> &emsp;&emsp;System.out.printf("Name: %s \tAge: %d\n", name, age);</li>
+<li><span style="color:#949494">36</span><span style="color:green">|</span> &emsp;}</li>
+<li><span style="color:#949494">37</span><span style="color:green">|</span> }</li>
+</ul>
+</div><br>
+<font size="4">Консольный вывод:<br></font>
+<img src="img07.png"><br><br>
+</body>
+</html>
